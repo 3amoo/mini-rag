@@ -11,7 +11,4 @@ A minimal implementation of RAG model for question answering
 1) (sudo) xbps-install -S
 2) Create a new Enviroment:
     - python -m venv mini-RAG --system-site-packages
-    - source miniRAG/bin/activate
-
-
-    
+    - source mini-RAG/bin/activate
