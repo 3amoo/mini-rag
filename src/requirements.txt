@@ -2,3 +2,4 @@ fastapi==0.141.1
 hypercorn==0.18.0
 multipart==2.0.0
 python-dotenv==1.2.3
+pydantic-settings==2.15.0
