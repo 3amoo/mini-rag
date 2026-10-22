@@ -25,7 +25,7 @@ class ProcessController(BaseController):
 
     def get_file_loader(self, file_id: str):
         
-        file_ext = self.get_file_extension(self)
+        file_ext = self.get_file_extension(file_id=file_id)
         file_path = os.path.join(
             self.project_path,
             file_id
@@ -48,11 +48,11 @@ class ProcessController(BaseController):
 
 
     def process_file_content(self, file_content: list, file_id: str, 
-                             chunk_size: int=100, overlap_size: int=20):
+                             chunk_size: int=100, chunk_overlap: int=20):
 
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,
-            overlap_size=overlap_size,
+            chunk_overlap=chunk_overlap,
             length_function=len,
         )
 
