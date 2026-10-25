@@ -15,7 +15,7 @@ class ProcessController(BaseController):
         super().__init__()
 
         self.project_id = project_id
-        self.project_path = ProjectController().get_project_path(project_id)
+        self.project_path = ProjectController().get_project_path(project_id=project_id)
 
 
     def get_file_extension(self, file_id: str):
@@ -31,6 +31,8 @@ class ProcessController(BaseController):
             file_id
         )
 
+        if not os.path.exists(file_path):
+            return None
         
         if file_ext == ProccessingEnum.TXT.value:
             return TextLoader(file_path, encoding="utf-8")
@@ -38,13 +40,18 @@ class ProcessController(BaseController):
         if file_ext == ProccessingEnum.PDF.value:
             return PyMuPDFLoader(file_path)
 
-
         return None
+
 
     def get_file_content(self, file_id: str):
 
         loader = self.get_file_loader(file_id=file_id)
-        return loader.load()
+        if loader:
+            return loader.load()
+        
+        return None
+
+
 
 
     def process_file_content(self, file_content: list, file_id: str, 

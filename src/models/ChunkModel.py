@@ -10,11 +10,16 @@ class ChunkModel(BaseDataModel):
         super().__init__(db_client=db_client)
         self.collection = self.db_client[DataBaseEnum.COLLECTION_CHUNK_NAME.value]
 
+
+
+
     @classmethod
     async def create_instance(cls, db_client: object):
         instance = cls(db_client)
         await instance.init_collection()
         return instance
+
+
 
     async def init_collection(self):
         all_collections = await self.db_client.list_collection_names()
@@ -63,7 +68,4 @@ class ChunkModel(BaseDataModel):
         })
 
         return result.deleted_count
-    
-    
-
     

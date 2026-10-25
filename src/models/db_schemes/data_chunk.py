@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field, validator
 from typing import Optional
-from bson.objectid import ObjectId
+from bson.objectid import ObjectId # pyright: ignore[reportMissingImports]
 
 class DataChunk(BaseModel):
     id: Optional[ObjectId] = Field(None, alias="_id")
@@ -8,11 +8,12 @@ class DataChunk(BaseModel):
     chunk_metadata: dict
     chunk_order: int = Field(..., gt=0)
     chunk_project_id: ObjectId
+    chunk_asset_id: ObjectId
 
     class Config:
         arbitrary_types_allowed = True
 
-    @staticmethod
+    @classmethod
     def get_indexes(cls): # if the func is static we use "cls" not "self"
 
         return [

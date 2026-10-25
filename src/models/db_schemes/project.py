@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field, validator
 from typing import Optional
-from bson.objectid import ObjectId
+from bson.objectid import ObjectId # pyright: ignore[reportMissingImports]
 
 class Project(BaseModel):
     id: Optional[ObjectId] = Field(None, alias="_id")
@@ -16,7 +16,7 @@ class Project(BaseModel):
     class Config:
         arbitrary_types_allowed = True
 
-    @staticmethod
+    @classmethod
     def get_indexes(cls): # if the func is static we use "cls" not "self"
 
         return [
