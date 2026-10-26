@@ -1,7 +1,7 @@
 from .BaseDataModel import BaseDataModel
 from .db_schemes import Asset
 from .enums.DataBaseEnum import DataBaseEnum
-from bson import ObjectId
+from bson import ObjectId # pyright: ignore[reportMissingImports]
 
 class AssetModel(BaseDataModel):
 
