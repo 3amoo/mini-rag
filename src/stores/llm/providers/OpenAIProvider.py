@@ -1,7 +1,7 @@
-from ...LLMInterface import LLMInterface
-from openai import OpenAI # pyright: ignore[reportMissingImports]
-from ...LLMEnums import OpenAIEnums
+from ..LLMInterface import LLMInterface
+from ..LLMEnums import OpenAIEnums
 import logging
+from openai import OpenAI # pyright: ignore[reportMissingImports]
 
 class OpenAIProvider(LLMInterface):
     def __init__(self, api_key: str, api_url:str=None,
