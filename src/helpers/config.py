@@ -36,6 +36,19 @@ class Settings(BaseSettings):
     VECTOR_DB_PATH:str
     VECTOR_DB_DISTANCE_METHOD:str = None
 
+
+    PRIMARY_LANG:str = "ar"
+    DEFAULT_LANG:str = "en"
+
+    # CELERY_BROKER_URL: str
+    # CELERY_RESULT_BACKEND: str
+    # CELERY_TASK_SERIALIZER: str = "json"
+    # CELERY_TASK_TIME_LIMIT: int = 600
+    # CELERY_TASK_ACKS_LATE: bool = False
+    # CELERY_WORKER_CONCURRENCY: int = 2
+    # CELERY_FLOWER_PASSWORD: str
+
+
     class Config:
         env_file = ".env"
 

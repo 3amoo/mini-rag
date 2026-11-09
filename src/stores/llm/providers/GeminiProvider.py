@@ -1,5 +1,5 @@
 from ..LLMInterface import LLMInterface
-from ..LLMEnums import GeminiEnums
+from ..LLMEnums import DocumentsTypeEnum, GeminiEnums
 import logging
 from google import genai
 from google.genai import types
@@ -23,6 +23,8 @@ class GeminiProvider(LLMInterface):
         self.embedding_size = None
 
         self.client = genai.Client(api_key=self.api_key)
+
+        self.enums = GeminiEnums
 
         self.logger = logging.getLogger(__name__)
 
@@ -98,10 +100,17 @@ class GeminiProvider(LLMInterface):
             self.logger.error("embedding model for Gemini wasn't set")
             return None
 
+        task_type = "RETRIEVAL_QUERY" if document_type == DocumentsTypeEnum.QUERY.value else "RETRIEVAL_DOCUMENT"
+        embedding_config = types.EmbedContentConfig(
+            output_dimensionality=self.embedding_size,
+            task_type=task_type,
+        )
+
         try:
             response = self.client.models.embed_content(
                 model=self.embedding_model_id,
                 contents=[self.process_text(text)],
+                config=embedding_config,
             )
         except Exception as e:
             self.logger.error(f"Error while embedding text with Gemini: {e}")

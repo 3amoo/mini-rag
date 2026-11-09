@@ -1,5 +1,5 @@
 from .LLMEnums import LLMEnums
-from .providers import CoHereProvider, OpenAIProvider 
+from .providers import CoHereProvider, GeminiProvider, OpenAIProvider
 
 
 class LLMProviderFactory:
@@ -28,11 +28,11 @@ class LLMProviderFactory:
 
 
         if provider == LLMEnums.GEMINI.value:
-            return CoHereProvider(
-                api_key = self.config.COHERE_API_KEY,
+            return GeminiProvider(
+                api_key = self.config.GEMINI_API_KEY,
 
                 default_input_max_characters = self.config.INPUT_DEFAULT_MAX_CHATACTERS,
                 default_generation_max_output_tokens = self.config.GENERATION_DEFAULT_MAX_TOKENS,
-                default_generation_temperture = self.config.GENERATION_DEFAULT_TEMPERTURE,
+                default_generation_temperature = self.config.GENERATION_DEFAULT_TEMPERTURE,
             )
         return None
