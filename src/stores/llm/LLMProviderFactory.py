@@ -1,4 +1,4 @@
-from stores.llm.LLMEnums import LLMEnums
+from .LLMEnums import LLMEnums
 from .providers import CoHereProvider, OpenAIProvider 
 
 
@@ -14,7 +14,7 @@ class LLMProviderFactory:
 
                 default_input_max_characters = self.config.INPUT_DEFAULT_MAX_CHATACTERS,
                 default_generation_max_output_tokens = self.config.GENERATION_DEFAULT_MAX_TOKENS,
-                default_generation_temperture = self.config.GENERATION_DEFAULT_TEMPERTURE,
+                default_generation_tempreature = self.config.GENERATION_DEFAULT_TEMPERTURE,
             )
 
         if provider == LLMEnums.COHERE.value:
@@ -23,7 +23,7 @@ class LLMProviderFactory:
 
                 default_input_max_characters = self.config.INPUT_DEFAULT_MAX_CHATACTERS,
                 default_generation_max_output_tokens = self.config.GENERATION_DEFAULT_MAX_TOKENS,
-                default_generation_temperture = self.config.GENERATION_DEFAULT_TEMPERTURE,
+                default_generation_tempreature = self.config.GENERATION_DEFAULT_TEMPERTURE,
             )
 
 

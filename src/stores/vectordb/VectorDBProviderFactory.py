@@ -1,6 +1,6 @@
 from .providers import QdrantDBProvider
 from .VectorDBEnums import DistanceMethodEnums, VectorDBEnums
-from ...controllers import BaseController
+from controllers.BaseController import BaseController
 
 
 class VectorDBProviderFactory:
@@ -10,7 +10,7 @@ class VectorDBProviderFactory:
         self.base_controller=BaseController()
 
     def create(self, provider:str):
-        if provider == DistanceMethodEnums.COSINE.value:
+        if provider == VectorDBEnums.QDRANT.value:
 
             db_path = self.base_controller.get_database_path(db_name=self.config.VECTOR_DB_PATH)
 
@@ -19,4 +19,4 @@ class VectorDBProviderFactory:
                 distance_method=self.config.VECTOR_DB_DISTANCE_METHOD,
             )
 
-        return None        
+        return None

@@ -10,5 +10,5 @@ A minimal implementation of RAG model for question answering
 ### install python (in void linux)
 1) (sudo) xbps-install -S
 2) Create a new Enviroment:
-    - python -m venv mini-RAG --system-site-packages
+    - python -m venv mini-RAG
     - source mini-RAG/bin/activate
