@@ -1,6 +1,35 @@
+# ======================================================
+# Project-specific
+# ======================================================
 myenvv/
-rag_env
+rag_env/
 
+# Node (src/package.json)
+node_modules/
+
+# JetBrains IDEs (PyCharm, IntelliJ)
+.idea/
+
+# Visual Studio Code
+#   Template: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.vsix
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+
+# ======================================================
+# Python — github/gitignore Python.gitignore
+# https://github.com/github/gitignore/blob/main/Python.gitignore
+# ======================================================
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -99,16 +128,16 @@ ipython_config.py
 #   install all needed dependencies.
 # Pipfile.lock
 
-# UV
+# uv
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
+#   This is especially recommended for binary packages to ensure reproducibility, and is
+#   more commonly ignored for libraries.
 # uv.lock
 
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
+#   This is especially recommended for binary packages to ensure reproducibility, and is
+#   more commonly ignored for libraries.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
 # poetry.lock
 # poetry.toml
@@ -163,6 +192,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Conda environments
+conda-meta/
+
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -170,7 +202,7 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
+# mkdocs/Zensical documentation
 /site
 
 # mypy
@@ -222,3 +254,61 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ======================================================
+# Node — github/gitignore Node.gitignore
+# https://github.com/github/gitignore/blob/main/Node.gitignore
+# ======================================================
+
+# Logs
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.seed
+*.pid.lock
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.*
+!.env.example
+
+# yarn v3
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

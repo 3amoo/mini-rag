@@ -1,2 +1,7 @@
-mongodb
+# MongoDB data files
+mongodb/
+
+# Environment files
 .env
+.env.*
+!.env.example
