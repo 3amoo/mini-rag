@@ -1,11 +1,19 @@
 myenvv/
 rag_env
 .env
+.vscode
+
+node_modules
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
+
+__pycache__/__pycache__/
+__pycache__/__pycache__/__pycache__/
+__pycache__/__pycache__/__pycache__/__pycache__/
 
 # C extensions
 *.so
