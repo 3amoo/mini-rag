@@ -14,3 +14,7 @@ openai==3.37.0
 cohere==7.3.0
 google-genai==2.33.0
 qdrant-client==1.15.1
+SQLAlchemy==2.1.8
+asyncpg==0.32.0
+alembic==1.20.1
+psycopg==3.3.8

@@ -13,8 +13,11 @@ class Settings(BaseSettings):
     FILE_DEFAULT_CHUNK_SIZE: int
 
 
-    MONGODB_URL: str
-    MONGODB_DATABASE: str
+    POSTGRES_USERNAME:str
+    POSTGRES_PASSWORD:str
+    POSTGRES_HOST:str
+    POSTGRES_PORT:int
+    POSTGRES_MAIN_DATABASE:str
 
     GENETATION_BACKEND : str
     EMBEDDING_BACKEND : str
@@ -39,14 +42,6 @@ class Settings(BaseSettings):
 
     PRIMARY_LANG:str = "ar"
     DEFAULT_LANG:str = "en"
-
-    # CELERY_BROKER_URL: str
-    # CELERY_RESULT_BACKEND: str
-    # CELERY_TASK_SERIALIZER: str = "json"
-    # CELERY_TASK_TIME_LIMIT: int = 600
-    # CELERY_TASK_ACKS_LATE: bool = False
-    # CELERY_WORKER_CONCURRENCY: int = 2
-    # CELERY_FLOWER_PASSWORD: str
 
 
     class Config:
